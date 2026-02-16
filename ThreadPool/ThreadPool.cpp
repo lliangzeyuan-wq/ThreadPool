@@ -13,8 +13,8 @@ void printLZY(std::string msg) {
 }
 void test1() {
 	std::thread thread1(printHelloWorld,"hejasiud dfsaj");
-	//thread1.join();
-	//thread1.detach();
+	//thread1.join();   //等子进程结束再结束main函数
+	//thread1.detach();   //允许main函数结束，子进程在后台运行
 	bool isJoin = thread1.joinable();
 	if (isJoin) {
 		thread1.join();
